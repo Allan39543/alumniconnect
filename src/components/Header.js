@@ -1,9 +1,12 @@
-import React from "react";
+import React,{useState} from "react";
 import logo from '../SiteMedia/logo-removebg.png'
 import {BsSearch} from 'react-icons/bs'
 import {GiHamburgerMenu} from 'react-icons/gi'
+import MainNav from "./MainNav";
 
 function Header(){
+
+    const[menu,setMenu]=useState(false)
 
     return(
 
@@ -29,7 +32,7 @@ Search
 
                 </div>
 
-                <div className="menu-modal">
+                <div className="menu-modal" onClick={()=>setMenu(false)}>
 
                 <div className="icon">
 <GiHamburgerMenu size="1.5em" />
@@ -42,6 +45,10 @@ Menu
 </div>
 
             </div>
+
+            {
+                menu && <MainNav />
+            }
 
         </div>
     )
