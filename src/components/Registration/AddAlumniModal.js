@@ -24,8 +24,8 @@ function AddAlumniModal({closeModal}){
             userDetails
           );
           
-          setDetails({email:"",names:"",userType:"",course:"",gradyr:"",loading:false}); // Reset the comment input after successful submission
-        //   props.setCommentSent(prev => !prev); // Toggle commentSent to trigger re-fetching comments
+          setDetails({email:"",names:"",userType:"",course:"",gradyr:"",loading:false}); 
+       
         } catch (error) {
           setDetails({email:"",names:"",userType:"",course:"",gradyr:"",loading:false});
         }

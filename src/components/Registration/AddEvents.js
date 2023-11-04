@@ -25,8 +25,7 @@ function AddEvents({closeModal}){
             eventDetails
           );
           
-          setDetails({ title:"",displayName:"",date:"",time:"",type:"",venue:"",loading:false }); // Reset the comment input after successful submission
-        //   props.setCommentSent(prev => !prev); // Toggle commentSent to trigger re-fetching comments
+          setDetails({ title:"",displayName:"",date:"",time:"",type:"",venue:"",loading:false }); 
         } catch (error) {
           setDetails({ title:"",displayName:"",date:"",time:"",type:"",venue:"",loading:false });
         }
