@@ -1,53 +1,60 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import logo from '../SiteMedia/logo-removebg.png'
-import {BsSearch} from 'react-icons/bs'
-import {GiHamburgerMenu} from 'react-icons/gi'
+import { BsSearch } from 'react-icons/bs'
+import { GiHamburgerMenu } from 'react-icons/gi'
 import MainNav from "./MainNav";
+import { AiOutlineLogin } from 'react-icons/ai'
+import SignIn from "./SignIn";
 
-function Header(){
+function Header() {
 
-    const[menu,setMenu]=useState(false)
+    const [menu, setMenu] = useState(false)
+    const [signIn,setSignIn]=useState(false)
 
-    return(
+    return (
 
         <div className="header">
 
             <div className="logo">
-                
-                <img src={logo} alt="logo"/>
+
+                <img src={logo} alt="logo" />
 
             </div>
 
             <div className="nav-sidebar-modal">
 
-                <div className="search">
+                <div className="search" onClick={() => setSignIn(true)}>
 
                     <div className="icon">
-<BsSearch size="1.5em" />
+                        <AiOutlineLogin size="1.5em" />
                     </div>
 
                     <div className="text">
-Search
-</div>
+                        Sign In
+                    </div>
 
                 </div>
 
-                <div className="menu-modal" onClick={()=>setMenu(false)}>
+                <div className="menu-modal" onClick={() => setMenu(true)}>
 
-                <div className="icon">
-<GiHamburgerMenu size="1.5em" />
+                    <div className="icon">
+                        <GiHamburgerMenu size="1.5em" />
                     </div>
 
                     <div className="text">
-Menu
-</div>
+                        Menu
+                    </div>
 
-</div>
+                </div>
 
             </div>
 
             {
-                menu && <MainNav />
+                menu && <MainNav closeMenu={setMenu} />
+            }
+
+{
+                signIn && <SignIn />
             }
 
         </div>

@@ -5,6 +5,9 @@
     box-sizing: border-box;
 }
 
+a{
+  text-decoration: none;
+}
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -31,7 +34,39 @@
     height: 100vh;
     object-fit:cover;
 }
+.landing-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 40%;
+  left: 8%;
+  z-index: 20;
+  color:chocolate;
+  
+}
+.landing-text h1{
+font-size: 5em;
 
+}
+.landing-text p{
+  font-size: 4em;
+  
+  }
+
+  .arrow-down {
+    animation: moveUpDown 1s linear infinite alternate;
+  }
+  
+  @keyframes moveUpDown {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(70px); 
+    }
+  }
+  
 .overlay {
     position: absolute;
     top: 0;
@@ -47,7 +82,7 @@
     width: 100%;
     height: 160px;
     position: fixed;
-    z-index: 20;
+    z-index: 30;
     
   }
 
@@ -109,6 +144,190 @@
     height: 80vh;
 
   }
+
+  .main-nav .close-modal{
+    position: absolute;
+    right: 5%;
+    display: flex;
+    align-items: center;
+    width: 8%;
+    font-size: 1.5em;
+    top: 2%;
+    justify-content: space-evenly;
+    color: aliceblue;
+    cursor: pointer;
+  }
+
+  .main-nav .close-modal:hover{
+
+    color: chocolate;
+  }
+
+  .main-nav .menu{
+
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15%;
+    height: 100vh;
+    border-right: 5px solid #C0C0C0;
+border-top-right-radius: 50px; 
+border-bottom-right-radius: 50px; 
+
+  }
+
+  .main-nav .menu .links{
+
+    margin-top: 3%;
+    height: 50px;
+    color: aliceblue;
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .main-nav .menu .links:hover{
+
+    color: chocolate;
+  }
+
+  .top-events{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: auto;
+    align-items: center;
+    overflow-y: scroll;
+  }
+
+  .top-eventsh1{
+    text-align: center;
+    
+  }
+
+.top-events .post{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 48%;
+  margin-top: 2%;
+  
+}
+
+.top-events .post .image img{
+
+  height: 300px;
+}
+
+.top-events .post .event-details {
+
+  width: 100%;
+  margin-top: 4%;
+}
+
+.top-events .post .event-details h3 {
+
+text-align: center;
+}
+
+.top-events .post .event-details .btns{
+display: flex;
+justify-content: space-evenly;
+width: 90%;
+margin: auto;
+margin-top: 2%;
+  
+}
+
+.top-events .post .event-details .btns button{
+
+  height: 40px;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1em;
+  background: transparent;
+  border: 2px solid chocolate;
+  color: chocolate;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+
+}
+
+.top-events .post .event-details .btns button:hover {
+  background: chocolate;
+  color: #000;
+ 
+}
+
+.sign-in{
+display: flex;
+flex-direction: column;
+background: #f1f1f1;
+position: absolute;
+height: 350px;
+width: 25%;
+border-radius: .4em;
+top: 90%;
+left: 35%;
+z-index: 40;
+align-items: center;
+
+}
+.sign-in form{
+display: flex;
+flex-direction: column;
+width: 80%;
+margin: auto;
+}
+
+.sign-in form input[type="email"]{
+
+  height: 50px;
+  border-radius: .5em;
+  border:2px solid chocolate;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  }
+
+  .sign-in form input[type="password"]{
+
+    height: 50px;
+    border-radius: .5em;
+    border:2px solid chocolate;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    }
+
+    .sign-in form button{
+
+      height: 40px;
+      width: 20%;
+      border: 2px solid chocolate;
+      border-radius: .4em;
+      cursor: pointer;
+
+      }
+
+.footer{
+
+  height: 10vh;
+  width: 100%;
+  background: #000;
+  margin-top: 3%;
+}
+
+
+
+
+
+
+
+
+
 
 
 
