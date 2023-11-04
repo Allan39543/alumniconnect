@@ -1,4 +1,5 @@
 import React from "react";
+import { FcGoogle } from 'react-icons/fc'
 
 function SignIn(){
 
@@ -6,7 +7,7 @@ function SignIn(){
 
         <div className="sign-in">
 
-            <h1>Sign In</h1>
+            {/* <h1>Sign In</h1>
 
             <form>
                 <label> Username/Email</label>
@@ -21,7 +22,16 @@ function SignIn(){
                     Sign In
                 </button>
 
-            </form>
+            </form> */}
+
+<div className='sign-in-page'>
+
+            {/* onClick={googleAuth} */}
+            <button ><FcGoogle size='1.5em' className='google-icon'/> <h4>Continue With Google</h4> </button>
+
+
+           
+        </div>
 
         </div>
     )

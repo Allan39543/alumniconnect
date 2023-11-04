@@ -270,6 +270,7 @@ margin-top: 2%;
 
 .sign-in{
 display: flex;
+justify-content: center;
 flex-direction: column;
 background: #f1f1f1;
 position: absolute;
@@ -282,6 +283,23 @@ z-index: 40;
 align-items: center;
 
 }
+
+
+
+.sign-in-page button{
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  padding: .4em;
+  border-radius: .4em;
+border: 2px solid chocolate;
+}
+
+.sign-in-page  h4{
+margin-left: 2px;
+}
+
 .sign-in form{
 display: flex;
 flex-direction: column;
