@@ -98,9 +98,10 @@ font-size: 5em;
 
   .header .nav-sidebar-modal{
     display: flex;
-    background: #f1f1f1;
+    background: #FFF;
     width: 20%;
     height: 100px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
   }
 
   .header .nav-sidebar-modal .search{
@@ -311,6 +312,43 @@ margin: auto;
       cursor: pointer;
 
       }
+
+      .regcont{
+
+        height: 100vh;
+        width: 100%;
+        background-image: url('../SiteMedia/bg1.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+      }
+
+      .regcont{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .regcont .event-modals{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 40%;
+        
+      }
+
+      .regcont .event-modals .reg-modal{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+        width: 45%;
+        margin-top: 2%;
+        border: 2px solid green;
+      }
+
 
 .footer{
 

@@ -38,10 +38,18 @@ function MainNav({closeMenu}) {
 
                 </ComponentLinks >
 
-                <ComponentLinks to="/about">
+                <ComponentLinks to="/about" onClick={()=>closeMenu(false)}>
                     <div className='links'>
                         About Us
                     </div>
+                </ComponentLinks >
+
+                <ComponentLinks to="/registration" onClick={()=>closeMenu(false)}>
+
+                    <div className='links'>
+                        Registration
+                    </div>
+
                 </ComponentLinks >
 
             </div>
