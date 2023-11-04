@@ -388,6 +388,11 @@ margin: auto;
         background: #f1f1f1;
       }
 
+      #list-div{
+        width: 70%;
+      }
+
+
       .add-object{
 
         display: flex;
@@ -435,7 +440,21 @@ margin: auto;
 
       }
 
-      .add-object form input[type="email"]{
+      .add-object form input{
+
+        height: 50px;
+        height: 50px;
+        padding: 10px; 
+        border: 2px solid #ccc; 
+        border-radius: 5px; 
+        outline: none; 
+        font-size: 16px; 
+        background-color: #fff; 
+        color: #333; 
+        transition: border-color 0.3s ease;
+      }
+
+      .add-object form select{
 
         height: 50px;
         height: 50px;
@@ -470,6 +489,41 @@ margin: auto;
 
         background: #964B00; 
     color: white; 
+      }
+      
+      #table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff;
+      }
+      
+      #table th {
+        background-color: #333;
+        color: #fff;
+        font-weight: bold;
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #333;
+      }
+      
+      #table td {
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+      
+      #table tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      
+      #table tr:hover {
+        background-color: #e0e0e0;
+      }
+
+      .center-td-content{
+
+        align-items: center;
+        cursor: pointer;
+        margin-left: 35%;
       }
       
 

@@ -38,15 +38,41 @@ function AddEvents({closeModal}){
                 <input type="text" required/>
                 </div>
 
-  
+                <div className="form-details">
+                <label> Date </label>
+                
+
+                <input type="date" id="dateInput" name="dateInput" />
+                </div>
 
                 <div className="form-details">
+                <label> Time </label>
+                <input type="time" id="timeInput" name="timeInput" />
+                </div>
+
+  <div className="form-details">
+                <label> Event Type </label>
+                
+
+                    <select id="selectInput" name="selectInput">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+    </select>
+                </div>
+                
+
+
+
+  
+
+                {/* <div className="form-details">
 
                 <label> Media </label>
 
                 <input type="file" required/>
 
-                </div>
+                </div> */}
 
                 <div className="form-details">
                 <button type="submit">

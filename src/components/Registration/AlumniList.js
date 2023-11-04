@@ -18,6 +18,10 @@ function AlumniList({closeModal}){
 
 </div>
 
+<div className="form-wrapper" id="list-div">
+
+</div>
+
         </div>
     )
 }
