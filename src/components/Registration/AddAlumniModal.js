@@ -19,9 +19,58 @@ function AddAlumniModal({closeModal}){
 
 <div className="form-wrapper">
 
-    <form>
-        
-    </form>
+    <div className="add-object">
+
+<h1>Add Alumni</h1>
+
+                <form>
+
+                <div className="form-details">
+                <label> Email</label>
+
+                <input type="email" required/>
+                </div>
+
+                <div className="form-details">
+                <label> Names </label>
+                
+
+                <input type="text" required/>
+                </div>
+
+                <div className="form-details">
+
+                <label> User Type </label>
+                
+                <input type="text" required/>
+
+                </div>
+
+                <div className="form-details">
+
+                <label> Course </label>
+
+                <input type="text" required/>
+
+                </div>
+
+                <div className="form-details">
+
+                <label> Grad Year </label>
+
+                <input type="text" required/>
+
+                </div>
+
+                <div className="form-details">
+                <button type="submit">
+                    Register
+                </button>
+                </div>
+
+            </form>
+
+    </div>
 
 
 </div>
