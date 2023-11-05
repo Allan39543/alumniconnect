@@ -85,7 +85,7 @@ verify.type==="Admin" ?
        {addAlumni && <AddAlumniModal closeModal={setAddAlumni} /> } 
        {alumniList && <AlumniList closeModal={setAlumniList} /> } 
        {events && <AddEvents closeModal={setEvents} /> } 
-       {eventList && <EventList closeModal={setEventList} /> } 
+       {eventList && <EventList type={verify.type} closeModal={setEventList} /> } 
 
         </div>
 }
