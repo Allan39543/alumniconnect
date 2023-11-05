@@ -30,7 +30,7 @@ function Header() {
 
                 {
                     user ?
-                    <div className="search" >
+                    <div className="search" onClick={() => setSignIn(true)} >
 
 
                     <div className="icon">

@@ -46,16 +46,28 @@ function RegistrationPanel(){
 
     }, [])
 
-
+console.log(verify.message)
     return(
 
+        
         <div className="regcont">
-
+            {
+user && verify.message==="UserExists" 
+?
         <div className="event-modals">
-
+            {
+verify.type==="Admin" ?
         <div className="reg-modal" onClick={()=>setAddAlumni(true)} ><AiOutlineUserAdd size='6em' /> <h1>Add Alumni</h1> </div>
-
+        :
+        ""
+            }
+            
+            {
+        verify.type==="Admin" ?
         <div className="reg-modal" onClick={()=>setAlumniList(true)}><CgUserList size='6em'/> <h1>Alumni List</h1></div>
+        :
+        ""
+            }
 
         <div className="reg-modal" onClick={()=>setEvents(true)}><VscDiffAdded size='6em'/> <h1>Add Events</h1></div>
 
@@ -63,12 +75,18 @@ function RegistrationPanel(){
 
         </div>
 
+        :
+        <h1>User Not Registered</h1>
+}
+
        {addAlumni && <AddAlumniModal closeModal={setAddAlumni} /> } 
        {alumniList && <AlumniList closeModal={setAlumniList} /> } 
        {events && <AddEvents closeModal={setEvents} /> } 
        {eventList && <EventList closeModal={setEventList} /> } 
 
         </div>
+
+        
     )
 }
 
