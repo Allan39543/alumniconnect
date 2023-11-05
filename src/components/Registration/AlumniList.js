@@ -5,6 +5,7 @@ import {GrUpdate} from 'react-icons/gr'
 import {AiTwotoneDelete} from 'react-icons/ai'
 import { UserContext } from '../../App'
 import axios from "axios";
+import UpdateAlumni from "./UpdateAlumni";
 
 function AlumniList(props){
 
@@ -12,6 +13,11 @@ function AlumniList(props){
 
     const [users,setUsers]=useState([])
     const [loading,setLoading]=useState(true)
+    const [updateAlumni,setUpdateAlumni]=useState(false)
+
+    
+
+   
 
     const fetchUsers = async () => {
 
@@ -60,6 +66,11 @@ function AlumniList(props){
 
     }, [])
 
+    const objlength=(id)=>{
+
+        return(id)
+    }
+
     console.log(users)
 
     return(
@@ -106,7 +117,10 @@ function AlumniList(props){
             <td>{user.type}</td>
             <td>{user.course}</td>
             <td>{user.gradyr}</td>
-            <td ><GrUpdate size="1.1em" className="center-td-content"/></td>
+            <td ><GrUpdate size="1.1em" className="center-td-content" onClick={() => {
+  setUpdateAlumni(true); 
+  objlength(user._id); 
+}}/></td>
             <td ><AiTwotoneDelete size="1.1em" color="red" className="center-td-content" onClick={()=>dltuser(user._id)}/></td>
             
             
@@ -120,6 +134,10 @@ function AlumniList(props){
 </table>
 
 </div>
+
+{
+    updateAlumni && <UpdateAlumni closeModal={setUpdateAlumni} userData={users} id={objlength}/>
+}
 
         </div>
     )

@@ -9,7 +9,7 @@ function UpdateEvent(props) {
 
   console.log("props",props.eventData)
 
-  const [details, setDetails] = useState({ title: props.eventData[0].title , displayName:props.eventData[0].displayName , venue: props.eventData.venue, date: props.eventData.date, time:props.eventData.time, type:props.eventData.type, loading: false })
+  const [details, setDetails] = useState({ title: props.eventData[0].title , displayName:props.eventData[0].displayName , venue: props.eventData[0].venue, date: props.eventData[0].date, time:props.eventData[0].time, type:props.eventData[0].type, loading: false })
   
 
   const HandleSubmit = async (e) => {
