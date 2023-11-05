@@ -6,9 +6,36 @@ import RegistrationPanel from './components/Registration/RegistrationPanel';
 import AdminPanel from './components/Registration/RegistrationPanel';
 import TopFourEvents from './components/TopFourEvents';
 import {Route,Routes} from 'react-router-dom'
+import { useState,useEffect } from 'react';
+import axios from 'axios';
 
 
 function App() {
+
+  const [user, setUser] = useState(null)
+
+  const getUser = async () => {
+		try {
+      
+			
+			const url = `${process.env.REACT_APP_API_URL}/auth/login/success`;
+			const { data } = await axios.get(url, { withCredentials: true });
+		   setUser(data.user._json);
+    }
+    catch(err){
+
+console.log(err)
+
+    }
+  }
+
+  useEffect(() => {
+		getUser();
+    
+	}, []);
+
+  
+console.log(user)
   return (
     <div className="App">
 

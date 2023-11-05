@@ -3,6 +3,10 @@ import { FcGoogle } from 'react-icons/fc'
 
 function SignIn(){
 
+    const googleAuth = () => {
+        window.location.href = `${process.env.REACT_APP_API_URL}/auth/google/callback`;
+    }
+
     return(
 
         <div className="sign-in">
@@ -26,8 +30,8 @@ function SignIn(){
 
 <div className='sign-in-page'>
 
-            {/* onClick={googleAuth} */}
-            <button ><FcGoogle size='1.5em' className='google-icon'/> <h4>Continue With Google</h4> </button>
+            {/* */}
+            <button onClick={googleAuth}  ><FcGoogle size='1.5em' className='google-icon'/> <h4>Continue With Google</h4> </button>
 
 
            
