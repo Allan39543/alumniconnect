@@ -1,15 +1,22 @@
-import React from "react";
+import React,{useEffect,useState,useContext} from "react";
 import {AiOutlineCloseCircle} from 'react-icons/ai'
 import { nanoid } from 'nanoid';
 import {GrUpdate} from 'react-icons/gr'
 import {AiTwotoneDelete} from 'react-icons/ai'
+import { UserContext } from '../../App'
+import axios from "axios";
 
-function AlumniList({closeModal}){
+function AlumniList(props){
+
+    const user = useContext(UserContext)
+
+    const [users,setUsers]=useState([])
+    const [loading,setLoading]=useState(true)
 
     return(
         <div className="transparent-modal-wrapper">
 
-<div className='close-modal' onClick={()=>closeModal(false)} >
+<div className='close-modal' onClick={()=>props.closeModal(false)} >
 
 <div className='close-text'>
     Close
