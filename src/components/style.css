@@ -292,9 +292,13 @@ top: 90%;
 left: 35%;
 z-index: 40;
 align-items: center;
+box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 
 }
 
+.sign-in h1{
+margin-bottom: 5%;
+}
 
 
 .sign-in-page button{
@@ -304,13 +308,18 @@ align-items: center;
   width: 100%;
   padding: .4em;
   border-radius: .4em;
-border: 2px solid chocolate;
+  border: 2px solid chocolate;
+  cursor: pointer;
 }
 
 .sign-in-page  h4{
 margin-left: 2px;
 }
-
+.loading{
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
 .sign-in form{
 display: flex;
 flex-direction: column;

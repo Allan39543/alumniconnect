@@ -8,6 +8,7 @@ function AddEvents({ closeModal }) {
   const user = useContext(UserContext)
 
   const [details, setDetails] = useState({ title: "", displayName: "", venue: "", date: "", time: "", type: "", loading: false })
+  
 
   const HandleSubmit = async (e) => {
     e.preventDefault();
@@ -19,7 +20,8 @@ function AddEvents({ closeModal }) {
       date: details.date,
       time: details.type,
       type: details.type,
-      venue: details.venue
+      venue: details.venue,
+      organiser:user.email
 
     };
     try {
@@ -115,8 +117,13 @@ function AddEvents({ closeModal }) {
                 </div> */}
 
             <div className="form-details">
-              <button type="submit">
-                Register
+              <button type="submit" disabled={details.loading}>
+                {
+                  details.loading ? "Please Wait..."
+                  :
+                  "Register"
+              
+}
               </button>
             </div>
 

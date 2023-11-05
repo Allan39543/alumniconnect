@@ -1,4 +1,4 @@
-import React,{useState,useContext,useEffect} from "react";
+import React,{useState,useContext,useEffect, Fragment} from "react";
 import {AiOutlineUserAdd} from'react-icons/ai'
 import {VscDiffAdded} from 'react-icons/vsc'
 import {CiCircleList} from 'react-icons/ci'
@@ -18,7 +18,7 @@ function RegistrationPanel(){
     const [alumniList,setAlumniList]=useState(false)
     const [events,setEvents]=useState(false)
     const [eventList,setEventList]=useState(false)
-    const [loading, setLoading]=useState(false)
+    const [loading, setLoading]=useState(true)
     const [verify,setVerify]=useState([])
 
     useEffect(() => {
@@ -49,7 +49,10 @@ function RegistrationPanel(){
 console.log(verify.message)
     return(
 
-        
+<Fragment>
+    {
+        loading ? <h1 className="loading">Loading...</h1>
+        :
         <div className="regcont">
             {
 user && verify.message==="UserExists" 
@@ -61,7 +64,7 @@ verify.type==="Admin" ?
         :
         ""
             }
-            
+
             {
         verify.type==="Admin" ?
         <div className="reg-modal" onClick={()=>setAlumniList(true)}><CgUserList size='6em'/> <h1>Alumni List</h1></div>
@@ -85,7 +88,10 @@ verify.type==="Admin" ?
        {eventList && <EventList closeModal={setEventList} /> } 
 
         </div>
+}
 
+        </Fragment>
+        
         
     )
 }

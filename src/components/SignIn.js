@@ -1,41 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FcGoogle } from 'react-icons/fc'
+import { UserContext } from '../App'
 
-function SignIn(){
+function SignIn() {
+
+    const user = useContext(UserContext)
 
     const googleAuth = () => {
         window.location.href = `${process.env.REACT_APP_API_URL}/auth/google/callback`;
     }
 
-    return(
+    return (
 
         <div className="sign-in">
 
-            {/* <h1>Sign In</h1>
+            {
+                user && <h1>Switch Accounts</h1>
+            }
 
-            <form>
-                <label> Username/Email</label>
+            <div className='sign-in-page'>
 
-                <input type="email" required/>
-
-                <label> Password </label>
-                
-                <input type="password" required/>
-
-                <button type="submit">
-                    Sign In
-                </button>
-
-            </form> */}
-
-<div className='sign-in-page'>
-
-            {/* */}
-            <button onClick={googleAuth}  ><FcGoogle size='1.5em' className='google-icon'/> <h4>Continue With Google</h4> </button>
+                {/* */}
+                <button onClick={googleAuth}  ><FcGoogle size='1.5em' className='google-icon' /> <h4>Continue With Google</h4> </button>
 
 
-           
-        </div>
+
+            </div>
 
         </div>
     )
