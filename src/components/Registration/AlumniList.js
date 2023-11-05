@@ -13,25 +13,48 @@ function AlumniList(props){
     const [users,setUsers]=useState([])
     const [loading,setLoading]=useState(true)
 
-    useEffect(() => {
+    const fetchUsers = async () => {
 
-        const fetchUsers = async () => {
+        try {
 
-            try {
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/allUsers`)
 
-                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/allUsers`)
-
-                    setUsers(response.data)
-
-                    setLoading(false)
-
-            }
-            catch (err) {
+                setUsers(response.data)
 
                 setLoading(false)
-            }
 
         }
+        catch (err) {
+
+            setLoading(false)
+        }
+
+    }
+
+    const dltuser=async(id)=>{
+
+        try {
+
+  
+                  const response = await axios.delete(`${process.env.REACT_APP_API_URL}/api/v1/deleteUser?userId=${id}`)
+
+                  
+
+                  fetchUsers()
+
+                  setLoading(false)
+
+
+
+          }
+          catch (err) {
+
+              setLoading(false)
+          }
+    }
+
+    useEffect(() => {
+
 
         fetchUsers()
 
@@ -84,7 +107,7 @@ function AlumniList(props){
             <td>{user.course}</td>
             <td>{user.gradyr}</td>
             <td ><GrUpdate size="1.1em" className="center-td-content"/></td>
-            <td ><AiTwotoneDelete size="1.1em" color="red" className="center-td-content"/></td>
+            <td ><AiTwotoneDelete size="1.1em" color="red" className="center-td-content" onClick={()=>dltuser(user._id)}/></td>
             
             
             

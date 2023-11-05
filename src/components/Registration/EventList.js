@@ -5,6 +5,7 @@ import {GrUpdate} from 'react-icons/gr'
 import {AiTwotoneDelete} from 'react-icons/ai'
 import { UserContext } from '../../App'
 import axios from "axios";
+import UpdateEvent from "./UpdateEvent";
 
 function EventList(props){
 
@@ -13,6 +14,7 @@ function EventList(props){
     const[allEvents,setAllEvents]=useState([])
     const[loading,setLoading]=useState(true)
     const[dlt,setDlt]=useState({})
+    const[updateEvent,setUpdateEvent]=useState(false)
 
     const fetchEvents = async () => {
 
@@ -70,6 +72,10 @@ function EventList(props){
           }
     }
 
+    const objlength=(length)=>{
+        console.log(length)
+    }
+
     console.log(allEvents)
 
     return(
@@ -119,7 +125,11 @@ function EventList(props){
             <td>{details.time}</td>
             <td>{details.type}</td>
             <td>{details.venue}</td>
-            <td ><GrUpdate size="1.1em" className="center-td-content"/></td>
+            <td ><GrUpdate size="1.1em" className="center-td-content" onClick={() => {
+  setUpdateEvent(true); 
+  objlength(details._id); 
+}}
+/></td>
             <td ><AiTwotoneDelete size="1.1em" color="red" className="center-td-content" onClick={()=>dltevent(details._id)}/></td>
             
             
@@ -135,6 +145,10 @@ function EventList(props){
 </table>
 
 </div>
+
+{
+    updateEvent && <UpdateEvent closeModal={setUpdateEvent} eventData={allEvents} />
+}
 
         </div>
     )
