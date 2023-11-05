@@ -1,3 +1,4 @@
+import React from 'react';
 import About from './components/About';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -8,6 +9,7 @@ import TopFourEvents from './components/TopFourEvents';
 import {Route,Routes} from 'react-router-dom'
 import { useState,useEffect } from 'react';
 import axios from 'axios';
+export const UserContext=React.createContext()
 
 
 function App() {
@@ -34,10 +36,11 @@ console.log(err)
     
 	}, []);
 
-  
+
 console.log(user)
   return (
     <div className="App">
+<UserContext.Provider  value={user}>
 
 <Header />
       <Routes>
@@ -49,6 +52,7 @@ console.log(user)
       {/* <Landing /> */}
       {/* <TopFourEvents /> */}
       <Footer />
+      </UserContext.Provider>
 
     </div>
   );
