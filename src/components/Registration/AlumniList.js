@@ -13,6 +13,32 @@ function AlumniList(props){
     const [users,setUsers]=useState([])
     const [loading,setLoading]=useState(true)
 
+    useEffect(() => {
+
+        const fetchUsers = async () => {
+
+            try {
+
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/allUsers`)
+
+                    setUsers(response.data)
+
+                    setLoading(false)
+
+            }
+            catch (err) {
+
+                setLoading(false)
+            }
+
+        }
+
+        fetchUsers()
+
+    }, [])
+
+    console.log(users)
+
     return(
         <div className="transparent-modal-wrapper">
 
@@ -46,22 +72,25 @@ function AlumniList(props){
 
     <tbody>
        
-
+{
+    loading ? <h1>Loading</h1>
+    :
+    users.map(user=>(
         <tr key={nanoid()}>
 
-            <td>warigiachegesa@gmail.com</td>
-            <td>HALLAN CHEGE WARIGIA</td>
-            <td>Admin</td>
-            <td>COMPUTER SCINECE</td>
-            <td>2024</td>
+            <td>{user.email}</td>
+            <td>{user.names}</td>
+            <td>{user.type}</td>
+            <td>{user.course}</td>
+            <td>{user.gradyr}</td>
             <td ><GrUpdate size="1.1em" className="center-td-content"/></td>
             <td ><AiTwotoneDelete size="1.1em" color="red" className="center-td-content"/></td>
             
             
             
             </tr>
-        
-       
+     ) )
+}
     
     </tbody>
 

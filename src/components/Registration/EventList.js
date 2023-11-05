@@ -12,40 +12,63 @@ function EventList(props){
 
     const[allEvents,setAllEvents]=useState([])
     const[loading,setLoading]=useState(true)
+    const[dlt,setDlt]=useState({})
 
-    useEffect(() => {
+    const fetchEvents = async () => {
 
-        const fetchEvents = async () => {
+        try {
 
-            try {
+          if( user && props.type==="Admin"){
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/all`)
 
-              if( user && props.type==="Admin"){
-                    const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/all`)
-
-                    setAllEvents(response.data)
-
-                    setLoading(false)
-              }
-                    else if(user && props.type==="user"){
-                    const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/userEvents?user=${user ?user.email : ""}`)
-
-                    setAllEvents(response.data)
-
-                    setLoading(false)
-                    }
-
-
-            }
-            catch (err) {
+                setAllEvents(response.data)
 
                 setLoading(false)
-            }
+          }
+                else if(user && props.type==="user"){
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/userEvents?user=${user ?user.email : ""}`)
+
+                setAllEvents(response.data)
+
+                setLoading(false)
+                }
+
 
         }
+        catch (err) {
+
+            setLoading(false)
+        }
+
+    }
+
+    useEffect(() => {
 
         fetchEvents()
 
     }, [])
+
+    const dltevent=async(id)=>{
+
+        try {
+
+  
+                  const response = await axios.delete(`${process.env.REACT_APP_API_URL}/api/v1/deleteEvent?eventId=${id}`)
+
+                  setDlt(response.data)
+
+                  fetchEvents()
+
+                  setLoading(false)
+
+
+
+          }
+          catch (err) {
+
+              setLoading(false)
+          }
+    }
 
     console.log(allEvents)
 
@@ -84,6 +107,9 @@ function EventList(props){
     <tbody>
        
 {
+        loading ? <h1>Loading</h1>
+        :
+
     allEvents.map(details=>(
         <tr key={nanoid()}>
 
@@ -94,7 +120,7 @@ function EventList(props){
             <td>{details.type}</td>
             <td>{details.venue}</td>
             <td ><GrUpdate size="1.1em" className="center-td-content"/></td>
-            <td ><AiTwotoneDelete size="1.1em" color="red" className="center-td-content"/></td>
+            <td ><AiTwotoneDelete size="1.1em" color="red" className="center-td-content" onClick={()=>dltevent(details._id)}/></td>
             
             
             
