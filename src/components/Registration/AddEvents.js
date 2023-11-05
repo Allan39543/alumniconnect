@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
+import { UserContext } from '../../App'
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 import axios from 'axios'
 
 function AddEvents({ closeModal }) {
+
+  const user = useContext(UserContext)
 
   const [details, setDetails] = useState({ title: "", displayName: "", venue: "", date: "", time: "", type: "", loading: false })
 
