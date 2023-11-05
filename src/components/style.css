@@ -117,6 +117,17 @@ font-size: 4em;
     cursor: pointer;
   }
 
+  .header .nav-sidebar-modal .search img{
+
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+
+ #signed-in-name{
+  font-size: .6em;
+ }
+
   .header .nav-sidebar-modal .menu-modal{
 
     display: flex;

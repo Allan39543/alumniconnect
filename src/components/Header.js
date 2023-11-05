@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import React,{useState,useContext,useEffect} from "react";
 import logo from '../SiteMedia/logo-removebg.png'
 import { BsSearch } from 'react-icons/bs'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import MainNav from "./MainNav";
 import { AiOutlineLogin } from 'react-icons/ai'
 import SignIn from "./SignIn";
+import { UserContext } from '../App'
 
 
 function Header() {
 
+    const user = useContext(UserContext)
+
     const [menu, setMenu] = useState(false)
     const [signIn,setSignIn]=useState(false)
+    
 
     return (
 
@@ -24,6 +28,21 @@ function Header() {
 
             <div className="nav-sidebar-modal">
 
+                {
+                    user ?
+                    <div className="search" >
+
+
+                    <div className="icon">
+                        <img src={user.picture} alt="profile" />
+                    </div>
+
+                    <div className="text" id="signed-in-name">
+                       {user.name}
+                    </div>
+
+                </div>
+:
                 <div className="search" onClick={() => setSignIn(true)}>
 
                     <div className="icon">
@@ -35,6 +54,7 @@ function Header() {
                     </div>
 
                 </div>
+}
 
                 <div className="menu-modal" onClick={() => setMenu(true)}>
 
