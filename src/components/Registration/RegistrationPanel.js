@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState,useContext,useEffect} from "react";
 import {AiOutlineUserAdd} from'react-icons/ai'
 import {VscDiffAdded} from 'react-icons/vsc'
 import {CiCircleList} from 'react-icons/ci'
@@ -7,13 +7,45 @@ import AddAlumniModal from "./AddAlumniModal";
 import AlumniList from "./AlumniList";
 import EventList from "./EventList";
 import AddEvents from "./AddEvents";
+import { UserContext } from '../../App'
+import axios from "axios";
 
 function RegistrationPanel(){
+
+    const user = useContext(UserContext)
 
     const [addAlumni,setAddAlumni]=useState(false)
     const [alumniList,setAlumniList]=useState(false)
     const [events,setEvents]=useState(false)
     const [eventList,setEventList]=useState(false)
+    const [loading, setLoading]=useState(false)
+    const [verify,setVerify]=useState([])
+
+    useEffect(() => {
+
+        const verifyUser = async () => {
+
+            try {
+
+               
+                    const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/verify?user=${user ?user.email : ""}`)
+
+                    setVerify(response.data)
+
+                    setLoading(false)
+
+            }
+            catch (err) {
+
+                setLoading(false)
+            }
+
+        }
+
+        verifyUser()
+
+    }, [])
+
 
     return(
 
