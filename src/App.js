@@ -39,10 +39,11 @@ console.log(err)
 
 console.log(user)
   return (
-    <div className="App">
+    <>
 <UserContext.Provider  value={user}>
 
 <Header />
+
       <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/about" element={<About />} />
@@ -54,7 +55,7 @@ console.log(user)
       <Footer />
       </UserContext.Provider>
 
-    </div>
+    </>
   );
 }
 

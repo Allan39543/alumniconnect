@@ -5,7 +5,12 @@ import logo from '../SiteMedia/logo-removebg.png'
 
 function MainNav({closeMenu}) {
 
-    
+    const logOut = () => {
+        window.open(
+            `${process.env.REACT_APP_API_URL}/auth/logout`,
+            "_self"
+        )
+    }
 
     return (
         <nav className='main-nav'>
@@ -51,6 +56,10 @@ function MainNav({closeMenu}) {
                     </div>
 
                 </ComponentLinks >
+
+                {/* <div className='sign-out-details' style={{background:"white"}}>
+                                        <button onClick={logOut} className="sign-out">Sign Out</button>
+                                    </div> */}
 
             </div>
         </nav>
