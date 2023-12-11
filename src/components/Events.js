@@ -49,6 +49,8 @@ function Events() {
 
 
 {
+    loading? "Loading..."
+    :
     events.map((details)=>(
 
                 <div className='post'>
