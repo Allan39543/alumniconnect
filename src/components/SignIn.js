@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { FcGoogle } from 'react-icons/fc'
 import { UserContext } from '../App'
+import { AiOutlineCloseCircle } from 'react-icons/ai'
+import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 
 function SignIn() {
 
@@ -13,6 +15,19 @@ function SignIn() {
     return (
 
         <div className="sign-in">
+            <Link to="/">
+                  <div className='close-modal' id="close-modal" >
+
+<div className='close-text'>
+  Close
+</div>
+
+<div className='close-icon'>
+  <AiOutlineCloseCircle size="1.5em" />
+</div>
+
+</div>
+</Link>
 
             {
                 user && <h1>Switch Accounts</h1>

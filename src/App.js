@@ -9,6 +9,7 @@ import TopFourEvents from './components/TopFourEvents';
 import {Route,Routes} from 'react-router-dom'
 import { useState,useEffect } from 'react';
 import axios from 'axios';
+import Events from './components/Events';
 export const UserContext=React.createContext()
 
 
@@ -48,6 +49,8 @@ console.log(user)
       <Route path="/" element={<Landing />} />
       <Route path="/about" element={<About />} />
       <Route path="/registration" element={<RegistrationPanel />} />
+
+      <Route path="/events" element={<Events />} />
       </Routes>
 
       {/* <Landing /> */}

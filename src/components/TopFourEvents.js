@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import event1 from '../SiteMedia/event11.jpg'
+import event1 from '../SiteMedia/event8.jpeg'
 import {BsFillBookmarkFill} from 'react-icons/bs'
 import {TiTick} from 'react-icons/ti'
 
