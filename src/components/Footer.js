@@ -4,6 +4,8 @@ function Footer(){
 
     return(
         <div className="footer">
+            
+            <p>AlumniConnect</p>
 
         </div>
     )

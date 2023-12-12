@@ -1,10 +1,13 @@
-import React, { Fragment, useState, useEffect } from 'react'
+import React, { Fragment, useState, useEffect,useContext } from 'react'
 import event1 from '../SiteMedia/event8.jpeg'
 import { BsFillBookmarkFill } from 'react-icons/bs'
+import { UserContext } from '../App'
 import { TiTick } from 'react-icons/ti'
 import axios from 'axios'
 
 function Events() {
+
+    const user = useContext(UserContext)
 
     const [events, setAllEvents] = useState([])
     const [loading, setLoading] = useState(false)
@@ -34,6 +37,35 @@ function Events() {
         fetchEvents()
 
     }, [])
+
+    const AttendEvent=async(id)=>{
+
+        console.log("Attend Event")
+
+        const userDetails = {
+
+            email: user.email,
+            eventId:id
+
+            
+          };
+
+        try {
+
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/attend`,userDetails)
+
+            
+
+
+            setLoading(false)
+
+
+        }
+        catch (err) {
+
+            setLoading(false)
+        }
+    }
 
     console.log('events', events)
 
@@ -65,9 +97,12 @@ function Events() {
 
                         <h3>{details.displayName}</h3>
 
-                        <div className='btns' >
+                        <div className='btns' onClick={()=>AttendEvent(details._id)}>
+
                             <button><TiTick /> Attend</button>
+
                             <button>< BsFillBookmarkFill />save</button>
+
                         </div>
 
                     </div>
