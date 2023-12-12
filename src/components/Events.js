@@ -67,6 +67,35 @@ function Events() {
         }
     }
 
+    const SaveEvent=async(id)=>{
+
+        console.log("Attend Event")
+
+        const userDetails = {
+
+            email: user.email,
+            eventId:id
+
+            
+          };
+
+        try {
+
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/save`,userDetails)
+
+            
+
+
+            setLoading(false)
+
+
+        }
+        catch (err) {
+
+            setLoading(false)
+        }
+    }
+
     console.log('events', events)
 
     return (
@@ -97,11 +126,11 @@ function Events() {
 
                         <h3>{details.displayName}</h3>
 
-                        <div className='btns' onClick={()=>AttendEvent(details._id)}>
+                        <div className='btns' >
 
-                            <button><TiTick /> Attend</button>
+                            <button onClick={()=>AttendEvent(details._id)}><TiTick /> Attend</button>
 
-                            <button>< BsFillBookmarkFill />save</button>
+                            <button onClick={()=>SaveEvent(details._id)}>< BsFillBookmarkFill />save</button>
 
                         </div>
 
