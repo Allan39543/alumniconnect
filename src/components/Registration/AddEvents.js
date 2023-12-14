@@ -18,7 +18,7 @@ function AddEvents({ closeModal }) {
       title: details.title,
       displayName: details.displayName,
       date: details.date,
-      time: details.type,
+      time: details.time,
       type: details.type,
       venue: details.venue,
       organiser:user.email

@@ -39,7 +39,12 @@ function YourEvents() {
 
     }, [])
 
+    const DateStringFormat = (dateObj) => {
 
+        const StringDate = new Date(dateObj).toLocaleDateString()
+
+        return StringDate
+    }
 
     console.log('yourevents', events)
 
@@ -69,7 +74,9 @@ function YourEvents() {
 
                     <div className='event-details'>
 
-                        <h3>{details.displayName}</h3>
+                        <h3>{details.eventId.displayName}</h3>
+
+                        <h3>{details.eventId.date}</h3>
 
 
 

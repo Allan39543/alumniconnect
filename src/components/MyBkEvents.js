@@ -69,7 +69,7 @@ function MyBkEvents() {
 
                     <div className='event-details'>
 
-                        <h3>{details.displayName}</h3>
+                        <h3>{details.eventId.displayName}</h3>
 
 
 
