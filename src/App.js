@@ -10,6 +10,7 @@ import {Route,Routes} from 'react-router-dom'
 import { useState,useEffect } from 'react';
 import axios from 'axios';
 import Events from './components/Events';
+import YourEvents from './components/YourEvents';
 export const UserContext=React.createContext()
 
 
@@ -51,6 +52,7 @@ console.log(user)
       <Route path="/registration" element={<RegistrationPanel />} />
 
       <Route path="/events" element={<Events />} />
+      <Route path="/yourevents" element={<YourEvents />} />
       </Routes>
 
       {/* <Landing /> */}

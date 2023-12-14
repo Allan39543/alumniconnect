@@ -10,7 +10,8 @@ function Events() {
     const user = useContext(UserContext)
 
     const [events, setAllEvents] = useState([])
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
+    const[loadingEv,setLoadingEv]=useState(false)
 
     const fetchEvents = async () => {
 
@@ -40,7 +41,8 @@ function Events() {
 
     const AttendEvent=async(id)=>{
 
-        console.log("Attend Event")
+        
+        setLoadingEv(true)
 
         const userDetails = {
 
@@ -56,20 +58,20 @@ function Events() {
 
             
 
-
-            setLoading(false)
+            setLoadingEv(false)
 
 
         }
         catch (err) {
 
-            setLoading(false)
+            setLoadingEv(false)
         }
     }
 
     const SaveEvent=async(id)=>{
 
-        console.log("Attend Event")
+        
+        setLoadingEv(true)
 
         const userDetails = {
 
@@ -86,13 +88,13 @@ function Events() {
             
 
 
-            setLoading(false)
+            setLoadingEv(false)
 
 
         }
         catch (err) {
 
-            setLoading(false)
+            setLoadingEv(false)
         }
     }
 
@@ -128,9 +130,9 @@ function Events() {
 
                         <div className='btns' >
 
-                            <button onClick={()=>AttendEvent(details._id)}><TiTick /> Attend</button>
+                            <button onClick={()=>AttendEvent(details._id)}><TiTick />{loadingEv?"loading..":"Attend"  }</button>
 
-                            <button onClick={()=>SaveEvent(details._id)}>< BsFillBookmarkFill />save</button>
+                            <button onClick={()=>SaveEvent(details._id)}>< BsFillBookmarkFill />{loadingEv?"loading..":"Save"  }</button>
 
                         </div>
 
