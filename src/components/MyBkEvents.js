@@ -51,7 +51,7 @@ function MyBkEvents() {
 
             <div className='top-events' id='all-events'>
 
-                <h1 className='top-eventsh1' id='top-eventsh1'>Your Events</h1>
+                <h1 className='top-eventsh1' id='top-eventsh1'>My Saved Events</h1>
 
 
 {

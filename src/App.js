@@ -11,6 +11,7 @@ import { useState,useEffect } from 'react';
 import axios from 'axios';
 import Events from './components/Events';
 import YourEvents from './components/YourEvents';
+import MyBkEvents from './components/MyBkEvents';
 export const UserContext=React.createContext()
 
 
@@ -53,6 +54,7 @@ console.log(user)
 
       <Route path="/events" element={<Events />} />
       <Route path="/yourevents" element={<YourEvents />} />
+      <Route path="/savedevents" element={<MyBkEvents />} />
       </Routes>
 
       {/* <Landing /> */}
