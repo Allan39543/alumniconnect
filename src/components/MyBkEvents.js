@@ -39,7 +39,12 @@ function MyBkEvents() {
 
     }, [])
 
+    const DateStringFormat = (dateObj) => {
 
+        const StringDate = new Date(dateObj).toLocaleDateString()
+
+        return StringDate
+    }
 
     console.log('savedevents', events)
 
@@ -70,6 +75,10 @@ function MyBkEvents() {
                     <div className='event-details'>
 
                         <h3>{details.eventId.displayName}</h3>
+
+                        <h3>{DateStringFormat(details.eventId.date)}</h3>
+
+                        <h3>{details.eventId.time}</h3>
 
 
 

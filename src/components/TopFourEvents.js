@@ -1,9 +1,51 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState, useEffect,useContext } from 'react'
 import event1 from '../SiteMedia/event8.jpeg'
+import { UserContext } from '../App'
 import {BsFillBookmarkFill} from 'react-icons/bs'
-import {TiTick} from 'react-icons/ti'
+import axios from 'axios'
+
 
 function TopFourEvents(){
+
+    const user = useContext(UserContext)
+
+    const [events, setAllEvents] = useState([])
+    const [loading, setLoading] = useState(true)
+
+    const fetchEvents = async () => {
+
+        try {
+
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/abtevents`)
+
+            setAllEvents(response.data)
+
+
+            setLoading(false)
+
+
+        }
+        catch (err) {
+
+            setLoading(false)
+        }
+
+    }
+
+    useEffect(() => {
+
+        fetchEvents()
+
+    }, [])
+
+    const DateStringFormat = (dateObj) => {
+
+        const StringDate = new Date(dateObj).toLocaleDateString()
+
+        return StringDate
+    }
+
+    console.log('about',events)
 
     return(
 
@@ -15,97 +57,43 @@ function TopFourEvents(){
 
             
 
-        <div className='post'>
+        {
+    loading? "Loading..."
+    :
+    events.map((details)=>(
 
-<div className='image'>
+                <div className='post'>
 
-    <img src={event1} alt="event-img" />
+                    <div className='image'>
 
-</div>
+                        <img src={event1} alt="event-img" />
 
-<div className='event-details'>
+                    </div>
 
-<h3>Tech Alumni AI Engineers Event</h3>
+                    <div className='event-details'>
 
-<div className='btns'>
-    <button><TiTick /> Attend</button>
-    <button>< BsFillBookmarkFill />save</button>
-    </div>
+                        <h3>{details.displayName}</h3>
 
-</div>
+                        <h3>{DateStringFormat(details.date)}</h3>
 
-
-
-</div>
-
-            <div className='post'>
-
-<div className='image'>
-
-    <img src={event1} alt="event-img" />
-
-</div>
-
-<div className='event-details'>
-
-<h3>Tech Alumni AI Engineers Event</h3>
-
-<div className='btns'>
-    <button><TiTick /> Attend</button>
-    <button>< BsFillBookmarkFill />save</button>
-    </div>
-
-</div>
+                        <h3>{details.time}</h3>
 
 
 
-</div>
-
-<div className='post'>
-
-<div className='image'>
-
-    <img src={event1} alt="event-img" />
-
-</div>
-
-<div className='event-details'>
-
-<h3>Tech Alumni AI Engineers Event</h3>
-
-<div className='btns'>
-    <button><TiTick /> Attend</button>
-    <button>< BsFillBookmarkFill />save</button>
-    </div>
-
-</div>
+                    </div>
 
 
 
-</div>
+                </div>
+      )  )
 
-<div className='post'>
-
-<div className='image'>
-
-    <img src={event1} alt="event-img" />
-
-</div>
-
-<div className='event-details'>
-
-<h3>Tech Alumni AI Engineers Event</h3>
-
-<div className='btns'>
-    <button><TiTick /> Attend</button>
-    <button>< BsFillBookmarkFill />save</button>
-    </div>
-
-</div>
+}
 
 
 
-</div>
+
+
+
 
         </div>
         </Fragment>
