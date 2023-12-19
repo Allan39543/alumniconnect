@@ -12,35 +12,55 @@ import axios from 'axios';
 import Events from './components/Events';
 import YourEvents from './components/YourEvents';
 import MyBkEvents from './components/MyBkEvents';
+import { useLocation } from "react-router-dom";
 export const UserContext=React.createContext()
 
 
 function App() {
 
+  const location = useLocation();
+
   const [user, setUser] = useState(null)
 
-  const getUser = async () => {
-		try {
+//   const getUser = async () => {
+// 		try {
       
 			
-			const url = `${process.env.REACT_APP_API_URL}/auth/login/success`;
-			const { data } = await axios.get(url, { withCredentials: true });
-		   setUser(data.user._json);
-    }
-    catch(err){
+// 			const url = `${process.env.REACT_APP_API_URL}/auth/login/success`;
+// 			const { data } = await axios.get(url, { withCredentials: true });
+// 		   setUser(data.user._json);
+//     }
+//     catch(err){
 
-console.log(err)
+// console.log(err)
 
-    }
-  }
+//     }
+//   }
 
-  useEffect(() => {
-		getUser();
+//   useEffect(() => {
+// 		getUser();
     
-	}, []);
+// 	}, []);
 
 
-console.log(user)
+useEffect(() => {
+  // Parse the query parameters from the URL
+  const searchParams = new URLSearchParams(location.search);
+  const userData = searchParams.get("userData");
+
+  // If userData exists, you can parse it as JSON
+  if (userData) {
+    const userDataObject = JSON.parse(decodeURIComponent(userData));
+    setUser(userDataObject);
+    console.log("User data:", userDataObject);
+    
+    // Now you can use userDataObject as needed in your component
+  }
+}, [location.search]);
+
+
+console.log("user",user)
+
   return (
     <>
 <UserContext.Provider  value={user}>
