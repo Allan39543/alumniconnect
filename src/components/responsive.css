@@ -160,6 +160,7 @@
           .about-text{
 
             font-size: 1em;
+            
           }
 
           .about-text h1{
@@ -168,9 +169,17 @@
 
           }
 
+          .about-img{
+
+            
+            margin-bottom: 5%;
+
+          }
+
           .about-img img {
 
             height: 200px;
+            margin-bottom: 5%;
 
           }
 
