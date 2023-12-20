@@ -146,5 +146,39 @@
             overflow: scroll;
           }
 
+          .about-container{
 
+            height: auto;
+          }
+
+          .about-wrapper{
+
+            flex-direction: column;
+            margin-top: 30%;
+          }
+
+          .about-text{
+
+            font-size: 1em;
+          }
+
+          .about-text h1{
+
+            font-size: .9em;
+
+          }
+
+          .about-img img {
+
+            height: 200px;
+
+          }
+
+          .about-img h1 {
+
+            font-size: 1em;
+
+          }
+
+        
       }
