@@ -17,7 +17,7 @@ function Events() {
 
         try {
 
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/all`)
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/all`)
 
             setAllEvents(response.data)
 
@@ -54,7 +54,7 @@ function Events() {
 
         try {
 
-            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/attend`,userDetails)
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/attend`,userDetails)
 
             
 
@@ -83,7 +83,7 @@ function Events() {
 
         try {
 
-            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/save`,userDetails)
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/save`,userDetails)
 
             
 

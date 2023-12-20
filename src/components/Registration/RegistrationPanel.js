@@ -28,7 +28,7 @@ function RegistrationPanel(){
             try {
 
                
-                    const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/verify?user=${user ?user.email : ""}`)
+                    const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/verify?user=${user ?user.email : ""}`)
 
                     setVerify(response.data)
 

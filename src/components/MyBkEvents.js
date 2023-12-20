@@ -17,7 +17,7 @@ function MyBkEvents() {
 
         try {
 
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/save?userData=${user ? user.email : "invalid-email"}`)
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/save?userData=${user ? user.email : "invalid-email"}`)
 
             setAllEvents(response.data)
 

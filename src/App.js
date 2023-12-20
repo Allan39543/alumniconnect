@@ -44,17 +44,17 @@ function App() {
 
 
 useEffect(() => {
-  // Parse the query parameters from the URL
+  
   const searchParams = new URLSearchParams(location.search);
   const userData = searchParams.get("userData");
 
-  // If userData exists, you can parse it as JSON
+  
   if (userData) {
     const userDataObject = JSON.parse(decodeURIComponent(userData));
     setUser(userDataObject);
     console.log("User data:", userDataObject);
     
-    // Now you can use userDataObject as needed in your component
+    
   }
 }, [location.search]);
 

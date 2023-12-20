@@ -23,7 +23,7 @@ function AlumniList(props){
 
         try {
 
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/allUsers`)
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/allUsers`)
 
                 setUsers(response.data)
 
@@ -42,7 +42,7 @@ function AlumniList(props){
         try {
 
   
-                  const response = await axios.delete(`${process.env.REACT_APP_API_URL}/api/v1/deleteUser?userId=${id}`)
+                  const response = await axios.delete(`${process.env.REACT_APP_API_URL}/api/deleteUser?userId=${id}`)
 
                   
 

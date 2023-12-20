@@ -28,7 +28,7 @@ function UpdateEvent(props) {
     };
     try {
       const response = await axios.put(
-        `${process.env.REACT_APP_API_URL}/api/v1/UpdateEvent/`,
+        `${process.env.REACT_APP_API_URL}/api/UpdateEvent/`,
         eventDetails
       );
 

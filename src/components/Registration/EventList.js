@@ -21,14 +21,14 @@ function EventList(props){
         try {
 
           if( user && props.type==="Admin"){
-                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/all`)
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/all`)
 
                 setAllEvents(response.data)
 
                 setLoading(false)
           }
                 else if(user && props.type==="user"){
-                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/userEvents?user=${user ?user.email : ""}`)
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/userEvents?user=${user ?user.email : ""}`)
 
                 setAllEvents(response.data)
 
@@ -55,7 +55,7 @@ function EventList(props){
         try {
 
   
-                  const response = await axios.delete(`${process.env.REACT_APP_API_URL}/api/v1/deleteEvent?eventId=${id}`)
+                  const response = await axios.delete(`${process.env.REACT_APP_API_URL}/api/deleteEvent?eventId=${id}`)
 
                   setDlt(response.data)
 

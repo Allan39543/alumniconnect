@@ -26,7 +26,7 @@ function AddEvents({ closeModal }) {
     };
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/v1/event/`,
+        `${process.env.REACT_APP_API_URL}/api/event/`,
         eventDetails
       );
 
