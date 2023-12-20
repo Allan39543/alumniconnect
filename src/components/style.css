@@ -655,6 +655,55 @@ align-items: center;
 }
 
 
+/* Updated CSS for a cooler loading overlay */
+.request-process-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.request-process-message {
+  font-family: 'Arial', sans-serif; 
+  font-size: 24px;
+  text-align: center;
+  padding: 20px;
+  color: #333333; 
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.request-process-message {
+  animation: pulse 1.5s infinite; 
+}
+
+
+@keyframes fadeInOut {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+.request-process-overlay {
+  animation: fadeInOut 2s infinite; 
+}
+
+
+
 
 
 

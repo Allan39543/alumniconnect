@@ -130,9 +130,24 @@ function Events() {
 
                         <div className='btns' >
 
-                            <button onClick={()=>AttendEvent(details._id)}><TiTick />{loadingEv?"loading..":"Attend"  }</button>
+                            <button onClick={()=>AttendEvent(details._id)}><TiTick />{loadingEv?
+                            
+                            <div class="request-process-overlay">
+                            <div class="request-process-message">
+                              Processing Your Request...
+                            </div>
+                          </div>
+                            
 
-                            <button onClick={()=>SaveEvent(details._id)}>< BsFillBookmarkFill />{loadingEv?"loading..":"Save"  }</button>
+                            :"Attend"  }</button>
+
+                            <button onClick={()=>SaveEvent(details._id)}>< BsFillBookmarkFill />{loadingEv?
+   <div class="request-process-overlay">
+   <div class="request-process-message">
+     Processing Your Request...
+   </div>
+ </div>
+                            :"Save"  }</button>
 
                         </div>
 
