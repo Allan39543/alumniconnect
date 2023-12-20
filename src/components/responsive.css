@@ -122,7 +122,29 @@
 
           }
     
-          .regcont .event-modals .reg-modal h1{
+          .form-wrapper{
+
+            width: 95%;
 
           }
+
+          .add-object{
+
+            
+            flex-direction: column;
+            justify-content: space-evenly;
+
+          }
+
+          .add-object form{
+
+            width: 100%;
+          }
+
+          #list-div{
+            width: 95%;
+            overflow: scroll;
+          }
+
+
       }

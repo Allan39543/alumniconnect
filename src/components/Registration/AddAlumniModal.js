@@ -94,7 +94,12 @@ function AddAlumniModal({closeModal}){
 
                 <div className="form-details">
                 <button type="submit">
-                    Register
+                {
+                  details.loading ? "Please Wait..."
+                  :
+                  "Register"
+              
+}
                 </button>
                 </div>
 
