@@ -4,6 +4,16 @@
         height: 120px;
     }
    
+    .header .logo{
+        width: 65%;
+          }
+
+          .header .nav-sidebar-modal{
+
+            width: 35%;
+            height: 120px;
+          }
+          
     .header .logo img{
         height: 90px;
         width: 90px;
@@ -54,19 +64,27 @@
 
             .top-events{
 
-                flex-direction: column;
-                width: 100%;
-                flex-wrap: nowrap;
+               
+                width: 90%;
                 
+               
                 
             }
 
             .top-events .post{
 
+                display: flex;
+                flex-direction: column;
                 width: 100%;
                 
                 
             }
+
+            .top-events .post .image img{
+
+                height: 200px;
+
+              }
 
             .sign-in{
 
