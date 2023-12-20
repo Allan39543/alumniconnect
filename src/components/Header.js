@@ -37,9 +37,9 @@ function Header() {
                         <img src={user.picture} alt="profile" />
                     </div>
 
-                    <div className="text" id="signed-in-name">
+                    {/* <div className="text" id="signed-in-name">
                        {user.name}
-                    </div>
+                    </div> */}
 
                 </div>
 :
