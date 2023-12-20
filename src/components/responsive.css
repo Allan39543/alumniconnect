@@ -25,6 +25,11 @@
         height: 60px;
         font-size: .7em;
       }
+
+      .main-nav .menu .links{
+
+        font-size: 1.2em;
+      }
     
       .text{
         display: none;
