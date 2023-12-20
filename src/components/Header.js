@@ -4,6 +4,7 @@ import { BsSearch } from 'react-icons/bs'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import MainNav from "./MainNav";
 import { AiOutlineLogin } from 'react-icons/ai'
+import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 import SignIn from "./SignIn";
 import { UserContext } from '../App'
 
@@ -20,12 +21,13 @@ function Header() {
 
         <div className="header">
 
+
             <div className="logo">
-
+            <Link to="/">
                 <img src={logo} alt="logo" />
-
+                </Link>
             </div>
-
+            
             <div className="nav-sidebar-modal">
 
                 {
