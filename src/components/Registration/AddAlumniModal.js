@@ -72,7 +72,7 @@ function AddAlumniModal({closeModal}){
 
                 <label> User Type </label>
                 
-                <input type="text" onChange={e => setDetails({ ...details, userType: e.target.value })}  required/>
+                <input type="text" onChange={e => setDetails({ ...details, userType: e.target.value })} placeholder="Admin/user" required/>
 
                 </div>
 

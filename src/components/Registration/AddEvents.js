@@ -97,6 +97,7 @@ function AddEvents({ closeModal }) {
 
 
               <select id="selectInput" name="selectInput" onChange={e => setDetails({ ...details, type: e.target.value })} >
+              <option value="">Select</option>
                 <option value="professional">Professional Development</option>
                 <option value="networking">networking</option>
                 <option value="campusevents">campus events</option>
