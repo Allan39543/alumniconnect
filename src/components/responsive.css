@@ -109,5 +109,20 @@
             
           }
     
+          .regcont .event-modals{
+
+            width: 90%;
+          }
+
+          .regcont .event-modals .reg-modal {
+
+            height: 140px;
+            width: 45%;
+            font-size: .6em;
+
+          }
     
+          .regcont .event-modals .reg-modal h1{
+
+          }
       }
