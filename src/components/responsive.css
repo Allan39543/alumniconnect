@@ -1,0 +1,79 @@
+@media (max-width: 768px) {
+
+    .header{
+        height: 120px;
+    }
+   
+    .header .logo img{
+        height: 90px;
+        width: 90px;
+        margin-left: 5%;
+      }
+    
+      .header .nav-sidebar-modal{
+    
+        height: 60px;
+        font-size: .7em;
+      }
+    
+      .text{
+        display: none;
+      }
+
+      .landing-text{
+
+       
+        top: 40%;
+        left: 1%;
+        width: 100%;
+      }
+
+      .landing-text h1{
+
+
+        font-size: 3em;
+        
+        }
+
+        .landing-text p{
+
+
+            font-size: 2em;
+            
+            }
+
+            .main-nav .menu{
+
+                width: 50%;
+            }
+
+            .close-modal{
+
+                right: 17%;
+            }
+
+            .top-events{
+
+                flex-direction: column;
+                width: 100%;
+                flex-wrap: nowrap;
+                
+            }
+
+            .top-events .post{
+
+                width: 100%;
+                
+                
+            }
+
+            .sign-in{
+
+                width: 90%;
+                left: 5%;
+            }
+
+           
+    
+    
+      }

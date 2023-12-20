@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import "./style.css"
+import "./responsive.css"
 import bgvideo from '../SiteMedia/bg2.mp4'
 import {BiDownArrow} from 'react-icons/bi'
 import Header from './Header'
