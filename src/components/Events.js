@@ -112,7 +112,11 @@ function Events() {
 
 
 {
-    loading? "Loading..."
+    loading? 
+    <div class='loading-status-event'>
+  <h1>Loading...</h1>
+  <div class="loading-spinner"></div>
+</div>
     :
     events.map((details)=>(
 

@@ -113,7 +113,13 @@ function EventList(props){
     <tbody>
        
 {
-        loading ? <h1>Loading</h1>
+        loading ? 
+
+        <div class='loading-status-event'>
+  <h1>Loading...</h1>
+  <div class="loading-spinner"></div>
+</div>
+
         :
 
     allEvents.map(details=>(
