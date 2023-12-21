@@ -27,11 +27,13 @@ function UpdateAlumni(props){
             `${process.env.REACT_APP_API_URL}/api/UpdateUsers/`,
             userDetails
           );
-          
+          props.closeModal(false)
           setDetails({email:props.userData.email,names:props.userData.names,userType:props.userData.type,course:props.userData.course,gradyr:props.userData.gradyr,loading:false}); 
+          
        
         } catch (error) {
           setDetails({email:props.userData.email,names:props.userData.names,userType:props.userData.type,course:props.userData.course,gradyr:props.userData.gradyr,loading:false});
+          props.closeModal(false)
         }
       };
 

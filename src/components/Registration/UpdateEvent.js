@@ -39,8 +39,10 @@ function UpdateEvent(props) {
       );
 
       setDetails({ title: props.eventData.title , displayName:props.eventData.displayName , venue: props.eventData.venue, date:initialDateString , time:props.eventData.time, type:props.eventData.type, loading: false });
+      props.closeModal(false)
     } catch (error) {
       setDetails({ title: props.eventData.title , displayName:props.eventData.displayName , venue: props.eventData.venue, date:initialDateString , time:props.eventData.time, type:props.eventData.type, loading: false });
+      props.closeModal(false)
     }
   };
 
