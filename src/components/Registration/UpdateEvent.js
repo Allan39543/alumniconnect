@@ -28,7 +28,8 @@ function UpdateEvent(props) {
       time: details.time,
       type: details.type,
       venue: details.venue,
-      organiser:user.email
+      organiser:user.email,
+      objbId:props.eventData._id
 
     };
     try {
@@ -37,9 +38,9 @@ function UpdateEvent(props) {
         eventDetails
       );
 
-      setDetails({ title: props.eventData.title , displayName:props.eventData.displayName , venue: props.eventData.venue, date: props.eventData.date, time:props.eventData.time, type:props.eventData.type, loading: false });
+      setDetails({ title: props.eventData.title , displayName:props.eventData.displayName , venue: props.eventData.venue, date:initialDateString , time:props.eventData.time, type:props.eventData.type, loading: false });
     } catch (error) {
-      setDetails({ title: props.eventData.title , displayName:props.eventData.displayName , venue: props.eventData.venue, date: props.eventData.date, time:props.eventData.time, type:props.eventData.type, loading: false });
+      setDetails({ title: props.eventData.title , displayName:props.eventData.displayName , venue: props.eventData.venue, date:initialDateString , time:props.eventData.time, type:props.eventData.type, loading: false });
     }
   };
 
