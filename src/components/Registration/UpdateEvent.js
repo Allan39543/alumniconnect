@@ -7,9 +7,14 @@ function UpdateEvent(props) {
 
   const user = useContext(UserContext)
 
+
   console.log("props",props.eventData)
 
-  const [details, setDetails] = useState({ title: props.eventData[0].title , displayName:props.eventData[0].displayName , venue: props.eventData[0].venue, date: props.eventData[0].date, time:props.eventData[0].time, type:props.eventData[0].type, loading: false })
+  const initialDate=new Date(props.eventData.date)
+
+  const initialDateString = initialDate.toISOString().split('T')[0];
+
+  const [details, setDetails] = useState({ title: props.eventData.title , displayName:props.eventData.displayName , venue: props.eventData.venue, date: initialDateString , time:props.eventData.time, type:props.eventData.type, loading: false })
   
 
   const HandleSubmit = async (e) => {
@@ -20,7 +25,7 @@ function UpdateEvent(props) {
       title: details.title,
       displayName: details.displayName,
       date: details.date,
-      time: details.type,
+      time: details.time,
       type: details.type,
       venue: details.venue,
       organiser:user.email
@@ -38,7 +43,7 @@ function UpdateEvent(props) {
     }
   };
 
-  console.log('details',details)
+  console.log('update details',details)
 
   return (
     <div className="transparent-modal-wrapper">
