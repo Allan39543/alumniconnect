@@ -14,7 +14,7 @@ function UpdateEvent(props) {
 
   const initialDateString = initialDate.toISOString().split('T')[0];
 
-  const [details, setDetails] = useState({ title: props.eventData.title , displayName:props.eventData.displayName , venue: props.eventData.venue, date: initialDateString , time:props.eventData.time, type:props.eventData.type, loading: false })
+  const [details, setDetails] = useState({ title: props.eventData.title , displayName:props.eventData.displayName , venue: props.eventData.venue, date: props.eventData.date , time:props.eventData.time, type:props.eventData.type, loading: false })
   
 
   const HandleSubmit = async (e) => {
@@ -29,7 +29,7 @@ function UpdateEvent(props) {
       type: details.type,
       venue: details.venue,
       organiser:user.email,
-      objbId:props.eventData._id
+      objId:props.eventData._id
 
     };
     try {
@@ -104,7 +104,7 @@ function UpdateEvent(props) {
     type="date"
     id="dateInput"
     name="dateInput"
-    value={details.date}
+    value={initialDateString}
     onChange={e => setDetails({ ...details, date: e.target.value })}
   />
 </div>
